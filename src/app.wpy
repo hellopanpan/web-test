@@ -1,0 +1,31 @@
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+  }
+  onLaunch() {
+  }
+}
+</script>
+<style lang="less" src="./assets/less/common.less"></style>
+<style lang="css" src="./assets/iconfont/iconfont.css"></style>

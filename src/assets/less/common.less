@@ -1,0 +1,123 @@
+@red: #e6ae66;
+@gray: #9b9b9b;
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 28rpx;
+  background: #666;
+}
+
+.submit-btn {
+  font-size: 32rpx;
+  color: #fff;
+  height: 92rpx;
+  text-align: center;
+  line-height: 92rpx;
+  margin: 60rpx 30rpx 0 30rpx;
+  background: #FF570E;
+  box-shadow: 0 1px 2px 0 rgba(254,64,112,0.51);
+  border-radius: 8rpx;
+  &.disabled {
+    background: #ccc;
+    color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+  }
+}
+
+// 上划线
+.border-top {
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -50%;
+    top: 0;
+    width: 200%;
+    transform: scale(0.5);
+    border-bottom: 1px solid #efefef;
+  }
+}
+// 下划线
+.border-bottom {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -50%;
+    bottom: 0;
+    width: 200%;
+    transform: scale(0.5);
+    border-bottom: 1px solid #efefef;
+  }
+}
+
+.color-red {
+  color: @red !important;
+}
+
+.color-gray {
+  color: @gray !important;
+}
+
+.font-bold {
+  font-weight: 500;
+}
+
+.text-block-online {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.text-twoline{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.formid-btn{
+    padding: 0;
+    background: none;
+    outline: 0;
+    line-height: normal;
+    border: none;
+    border-radius: 0;
+}
+.formid-btn::after{
+    border:none;
+}
+.two-line-hidden {
+  display: -webkit-box;
+  max-height: 72rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ifont{
+  display: inline-block;
+  height: 43rpx;
+  width: 63rpx;
+  background: url("../images/icon-c-1.gif") no-repeat;
+  background-size: cover;
+}
+.ifont2{
+  background: url("../images/icon-c-2.gif") no-repeat;
+  background-size: cover;
+}
+.ifont3{
+  height: 59rpx;
+  background: url("../images/icon-c-3.gif") no-repeat;
+  background-size: cover;
+}
+.ifont4{
+  height: 59rpx;
+  background: url("../images/icon-c-4.png") no-repeat;
+  background-size: cover;
+}

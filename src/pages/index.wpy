@@ -1,0 +1,38 @@
+<template>
+  <view class="container">
+    1
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import utils from '@/lib/utils'
+  import * as apis from '@/api'
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'test'
+    }
+    onLoad() {
+      this.getAddressList()
+    }
+    methods = {
+    }
+    getAddressList() {
+      wx.showLoading({
+        mask: true
+      })
+      apis.addressList().then(res => {
+        wx.hideLoading()
+        if (res.code == 0) {
+          this.list = res.data
+          this.$apply()
+        } else {
+          utils.showToast(res.msg)
+        }
+      }).catch(() => {
+        wx.hideLoading()
+        utils.showToast('服务开小差了，请稍后再试')
+      })
+    }
+  }
+</script>
